@@ -45,8 +45,11 @@
   margin: 0 20px 0 20px;
   font-weight: 400;
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.03em;
+}
+.active-title{
+  color: #ffffff !important;
 }
 /* The dots/bullets/indicators */
 .dot {

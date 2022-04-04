@@ -1,23 +1,28 @@
 <div class="slideshow-container">
-  <div *ngFor="let slide of slidesList; let ind=index;" class="slideImages fade">
-    <img [src]="slide.img"/>
+  <div
+    *ngFor="let slide of slidesList; let ind = index"
+    class="slideImages fade"
+  >
+    <img [src]="slide.img" />
   </div>
 
   <div class="slideshow-overlay">
     <h2>The World of Trendsetters</h2>
-    <p class="trendsapio-moto">Perfect talent or the perfect gig, all in one place. Trendsapio connects diverse talent from creative industries with brands that need fresh ideas.</p>
+    <p class="trendsapio-moto">
+      Perfect talent or the perfect gig, all in one place. Trendsapio connects
+      diverse talent from creative industries with brands that need fresh ideas.
+    </p>
     <button type="button">Danger</button>
   </div>
 
   <div class="slide-title-container">
-    <span *ngFor="let slide of slidesList"> {{slide.title}} </span>
+    <span
+      *ngFor="let slide of slidesList; let ind = index"
+      [ngClass]="{ 'active-title': ind+1 === slideIndex }"
+      (mouseenter)="titleHovered(ind, true)"
+      (mouseleave)="titleHovered(ind, false)"
+    >
+      {{ slide.title }} - {{ ind+1 }} - {{ slideIndex }}
+    </span>
   </div>
-</div>
-
-<br>
-
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
 </div>
